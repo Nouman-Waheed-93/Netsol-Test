@@ -507,7 +507,7 @@ GameObject:
   - component: {fileID: 1421579534}
   - component: {fileID: 1421579533}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: POIDownloader
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
