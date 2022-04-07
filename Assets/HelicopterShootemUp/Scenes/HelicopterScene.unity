@@ -154,9 +154,8 @@ MonoBehaviour:
     type: 3}
   enemySpawnDelay: 4
   enemyRespawnDelay: 10
-  enemyPositionsInDegrees:
-  - lat: 0
-    lon: 0
+  poiSetID: 11561
+  poiDownloader: {fileID: 1421579533}
 --- !u!4 &9242685
 Transform:
   m_ObjectHideFlags: 0
@@ -266,11 +265,8 @@ MonoBehaviour:
     type: 3}
   enemySpawnDelay: 1
   enemyRespawnDelay: 10
-  enemyPositionsInDegrees:
-  - lat: 0
-    lon: 0
-  - lat: 0
-    lon: 0
+  poiSetID: 11560
+  poiDownloader: {fileID: 1421579533}
 --- !u!4 &156959281
 Transform:
   m_ObjectHideFlags: 0

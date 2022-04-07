@@ -14,8 +14,9 @@ public class POIDownloader : MonoBehaviour
         RestClient.Get("https://poi.wrld3d.com/v1.1/poisets/"+setID+"/pois/?token="+authToken).Then(
            res =>
            {
-               Debug.Log(res.Text);
-               POICallback(JsonUtility.FromJson<LatLongDegrees[]>(res.Text));
+               string jsonString = "{\"POIs\":" + res.Text + "}";
+               LatLonArrayContainer container = JsonUtility.FromJson<LatLonArrayContainer>(jsonString);
+               POICallback(container.POIs);
            }
            ).Catch(err =>
            {

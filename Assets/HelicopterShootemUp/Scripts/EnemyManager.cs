@@ -13,7 +13,9 @@ public abstract class EnemyManager : MonoBehaviour
     [SerializeField]
     private float enemyRespawnDelay;
     [SerializeField]
-    private List<LatLongDegrees> enemyPositionsInDegrees;
+    private string poiSetID;
+    [SerializeField]
+    private POIDownloader poiDownloader;
 
     private List<LatLong> enemyPositions;
 
@@ -27,11 +29,6 @@ public abstract class EnemyManager : MonoBehaviour
         respawnDelay = new WaitForSeconds(enemyRespawnDelay);
         spawnDelay = new WaitForSeconds(enemySpawnDelay);
         InitializeEnemyPositions();
-    }
-
-    private void Start()
-    {
-        StartCoroutine(InstantiateEnemies());
     }
 
     #endregion
@@ -50,10 +47,18 @@ public abstract class EnemyManager : MonoBehaviour
     private void InitializeEnemyPositions()
     {
         enemyPositions = new List<LatLong>();
-        foreach(LatLongDegrees pos in enemyPositionsInDegrees)
+        poiDownloader.GetPOIs(poiSetID, ReceivePOIs);
+    }
+
+    private void ReceivePOIs(LatLongDegrees[] latlons)
+    {
+        Debug.Log("received");
+        foreach (LatLongDegrees pos in latlons)
         {
+            Debug.Log("adding");
             enemyPositions.Add(LatLong.FromDegrees(pos.lat, pos.lon));
         }
+        StartCoroutine(InstantiateEnemies());
     }
 
     private IEnumerator CoroutineRespawnEnemy(EnemyHealth enemy)
