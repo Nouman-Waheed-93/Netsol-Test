@@ -1,5 +1,6 @@
 Overview:
 
+- The video of the project is called "Netsol-Test-Video". It is placed in root folder.
 - The scene where all work is done is at Assets/HelicopterShootemUp/Scenes/HelicopterScene
 - Scripts are placed under Assets/HelicopterShootemUp/Scripts
 - HelicopterController.cs is the script that is responsible for helicopter movement(Helicopter does not move, SetOriginPoint() has been used to move the world)
