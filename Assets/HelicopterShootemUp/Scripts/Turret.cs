@@ -11,6 +11,9 @@ public class Turret : MonoBehaviour
     /// </summary>
     [SerializeField]
     private float firingInterval;
+    
+    [SerializeField]
+    private float targetingAngle;
 
     private Transform target;
     private float lastFireTime;
@@ -21,7 +24,8 @@ public class Turret : MonoBehaviour
         {
             if(other.GetComponentInParent<IDamageable>() != null)
             {
-                target = other.transform;
+                if(Vector3.Angle(transform.forward, other.transform.position - transform.position) < targetingAngle)
+                    target = other.transform;
             }
         }
     }

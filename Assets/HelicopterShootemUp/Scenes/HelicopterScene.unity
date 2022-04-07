@@ -467,6 +467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPool: {fileID: 632621651}
   firingInterval: 1
+  targetingAngle: 45
 --- !u!65 &796773694
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -478,8 +479,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 15, y: 200, z: 200}
-  m_Center: {x: 0, y: -90, z: 100}
+  m_Size: {x: 15, y: 200, z: 400}
+  m_Center: {x: 0, y: -90, z: 200}
 --- !u!54 &796773695
 Rigidbody:
   m_ObjectHideFlags: 0

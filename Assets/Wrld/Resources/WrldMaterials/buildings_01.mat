@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: buildings_01
+  m_Name: landmark_indoor_eim-ad58a0a7-201c-4bb8-91ef-b4c9d0c3bba7_buildings_01_Buildings_0_01131232112233_landmark_indoor_eim-ad58a0a7-201c-4bb8-91ef-b4c9d0c3bba7_buildings_01
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A
   m_LightmapFlags: 1
