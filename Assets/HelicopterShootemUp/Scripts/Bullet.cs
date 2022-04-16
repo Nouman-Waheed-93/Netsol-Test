@@ -14,12 +14,14 @@ public class Bullet : PooledObject
     private float lifeTime;
 
     private Rigidbody rigidbody;
+    private Transform myTransform;
     private float remainingLifeTime;
     #region Unity Callbacks
 
     private void Awake()
     {
         rigidbody = GetComponent<Rigidbody>();
+        myTransform = transform;
     }
 
     private void OnEnable()
@@ -34,7 +36,7 @@ public class Bullet : PooledObject
 
     private void FixedUpdate()
     {
-        Vector3 newPosition = transform.position + transform.forward * speed * Time.fixedDeltaTime;
+        Vector3 newPosition = myTransform.position + myTransform.forward * speed * Time.fixedDeltaTime;
         rigidbody.MovePosition(newPosition);
     }
 

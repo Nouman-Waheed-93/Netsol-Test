@@ -15,11 +15,18 @@ public class HelicopterController : MonoBehaviour
 
     private LatLong targetPosition = new LatLong(37.7858, -122.401);
 
+    private Transform myTransform;
+
+    private void Start()
+    {
+        myTransform = transform;
+    }
+
     void Update()
     {
         // Update movement angle from input
         rotationY += Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
-        transform.rotation = Quaternion.Euler(0, rotationY, 0);
+        myTransform.rotation = Quaternion.Euler(0, rotationY, 0);
 
         // Update target position from input
         var latitudeDelta = Mathf.Cos(Mathf.Deg2Rad * rotationY) * Input.GetAxis("Vertical") * movementSpeed * Time.deltaTime;

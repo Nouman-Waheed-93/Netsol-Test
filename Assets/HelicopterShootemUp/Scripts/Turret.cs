@@ -15,8 +15,15 @@ public class Turret : MonoBehaviour
     [SerializeField]
     private float targetingAngle;
 
+    private Transform myTransform;
     private Transform target;
     private float lastFireTime;
+
+    #region Unity Callbacks
+    private void Start()
+    {
+        myTransform = transform;
+    }
 
     private void OnTriggerStay(Collider other)
     {
@@ -24,7 +31,7 @@ public class Turret : MonoBehaviour
         {
             if(other.GetComponentInParent<IDamageable>() != null)
             {
-                if(Vector3.Angle(transform.forward, other.transform.position - transform.position) < targetingAngle)
+                if(Vector3.Angle(myTransform.forward, other.transform.position - myTransform.position) < targetingAngle)
                     target = other.transform;
             }
         }
@@ -48,9 +55,10 @@ public class Turret : MonoBehaviour
             }
             GameObject newBullet = bulletPool.GetPooledObject().gameObject;
             newBullet.SetActive(true);
-            newBullet.transform.position = transform.position;
+            newBullet.transform.position = myTransform.position;
             newBullet.transform.LookAt(target.position);
             lastFireTime = Time.time;
         }
     }
+    #endregion
 }

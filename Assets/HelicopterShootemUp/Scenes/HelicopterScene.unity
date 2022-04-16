@@ -466,7 +466,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPool: {fileID: 632621651}
-  firingInterval: 1
+  firingInterval: 0.5
   targetingAngle: 45
 --- !u!65 &796773694
 BoxCollider:

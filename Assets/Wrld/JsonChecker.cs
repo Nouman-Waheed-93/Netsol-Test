@@ -18,9 +18,4 @@ public class JsonChecker : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
